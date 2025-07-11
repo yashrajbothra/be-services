@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 const prerender = require('prerender');
 const PuppeteerRenderer = require('@prerenderer/renderer-puppeteer');
+const CHROME_PATH = process.env.CHROME_PATH;
 
 const server = prerender();
 
 const renderer = new PuppeteerRenderer({
-    executablePath: 'Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    executablePath: CHROME_PATH,
     launchOptions: {
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']

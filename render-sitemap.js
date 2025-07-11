@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { parseStringPromise } = require('xml2js');
 
-const SITEMAP_URL = "http://localhost:5173/sitemap.xml"; // Replace with your sitemap URL
+const SITEMAP_URL = "https://boostexpo.com/sitemap.xml"; // Replace with your sitemap URL
 const PRERENDER_SERVER = 'http://localhost:3000';
 
 if (!SITEMAP_URL) {
