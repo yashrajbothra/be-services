@@ -3,8 +3,10 @@ require('dotenv').config();
 const prerender = require('prerender');
 const PuppeteerRenderer = require('@prerenderer/renderer-puppeteer');
 const CHROME_PATH = process.env.CHROME_PATH;
-console.log('Using Chrome path:', CHROME_PATH);
-const server = prerender();
+
+const server = prerender({
+    port: process.env.PORT || 4000
+});
 
 const renderer = new PuppeteerRenderer({
     executablePath: CHROME_PATH,
