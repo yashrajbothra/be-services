@@ -15,7 +15,7 @@ const PM2_SERVICE_NAME = 'prerender';
 // - 0: on Sunday (0 and 7 both represent Sunday)
 cron.schedule('0 0 * * 0', () => {
   console.log('Running cron job: Rotating prerender token...');
-  
+
   // 1. Rotate the token
   rotateToken();
 

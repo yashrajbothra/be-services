@@ -5,7 +5,7 @@ const path = require('path');
 // --- File Paths ---
 // Define absolute paths for the token list and the .env file.
 const tokensFilePath = path.join(__dirname, 'prerender-env-schduler.js');
-const envFilePath = path.join(__dirname, '.env');
+const envFilePath = path.join(__dirname, '../web/apps/boostexpo/.env');
 
 function rotateToken() {
   try {
@@ -21,9 +21,11 @@ function rotateToken() {
     // 2. Read the current .env file
     let currentToken = '';
     let envContent = '';
+
     if (fs.existsSync(envFilePath)) {
       envContent = fs.readFileSync(envFilePath, 'utf-8');
       const match = envContent.match(/^PRERENDER_TOKEN=(.*)$/m);
+
       if (match) {
         currentToken = match[1];
       }
