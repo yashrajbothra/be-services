@@ -17,8 +17,7 @@ async function startPrerenderServer() {
 
     // Always use the path provided by @sparticuz/chromium
     try {
-        const chromium = await chromiumPromise;
-        console.log(await chromium.executablePath());
+        const { default: chromium } = await chromiumPromise;
         chromeExecutablePath = await chromium.executablePath();
 
         // Initialize the prerender server
